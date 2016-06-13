@@ -12,12 +12,17 @@ TEST_CASE("test box", "[test box]")
 	glm::vec3 v2{1.0,1.0,1.0};
 	REQUIRE(box1.min() == v1);
 	REQUIRE(box1.max() == v2);
+	REQUIRE(box1.volume() == 1.0);
+	REQUIRE(box1.area() == 6.0);
+
 
 	glm::vec3 v3{-1.0,-1.0,-1.0};
 	glm::vec3 v4{1.0,1.0,1.0};
 	Box box2{v3,v4};
 	REQUIRE(box2.min() == v3);
 	REQUIRE(box2.max() == v4);
+	REQUIRE(box2.volume() == 8.0);
+	REQUIRE(box2.area() == 24.0);
 }
 
 int main(int argc, char *argv[])
