@@ -1,7 +1,7 @@
 #include "sphere.hpp"
 
 Sphere::Sphere()
-  : Shape(), center_{glm::vec3{0.0,0.0,0.0}}, r_{0.0}{}
+  : Shape(), center_{glm::vec3{0.0,0.0,0.0}}, r_{0.5}{}
 
 Sphere::Sphere(glm::vec3 const& m, float r)
   : Shape()
@@ -11,12 +11,12 @@ Sphere::Sphere(glm::vec3 const& m, float r)
 
 float Sphere::area() const
 {
-	return -1.0f;
+	return 4*M_PI*pow(r_,2.0);
 }
 
 float Sphere::volume() const
 {
-	return -1.0f;
+	return (4.0/3.0) * M_PI * pow(r_, 3.0);
 }
 
 glm::vec3 const& Sphere::mid() const {
