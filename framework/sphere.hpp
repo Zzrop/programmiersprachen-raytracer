@@ -9,6 +9,7 @@ class Sphere : public Shape{
 public:
 	Sphere();
 	Sphere(glm::vec3 const& m , float r);
+	Sphere(std::string const& name, Color const& color, glm::vec3 const& m , float r);
 
 	float area() const override;
 	float volume() const override;

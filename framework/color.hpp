@@ -54,6 +54,10 @@ struct Color
     tmp -= b;
     return tmp;
   }
+
+  bool operator==(Color const& rhs) {
+    return(r == rhs.r && g == rhs.g && b == rhs.b);
+  }
 };
 
 #endif //#define BUW_COLOR_HPP

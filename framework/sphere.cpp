@@ -9,6 +9,13 @@ Sphere::Sphere(glm::vec3 const& m, float r)
   , r_{r}
  {}
 
+Sphere::Sphere(std::string const& name, Color const& color, glm::vec3 const& m, float r)
+  : Shape(name,color)
+  , center_{m}
+  , r_{r}
+ {}
+
+
 float Sphere::area() const
 {
 	return 4*M_PI*pow(r_,2.0);
@@ -21,8 +28,8 @@ float Sphere::volume() const
 
 glm::vec3 const& Sphere::mid() const {
 	return center_;
-};
+}
 
 float Sphere::r() const {
 	return r_;
-};
+}
