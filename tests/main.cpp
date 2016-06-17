@@ -37,6 +37,7 @@ TEST_CASE("test box", "[test box]")
 	REQUIRE(box3.area() == 24.0);
 	REQUIRE(box3.name() == "red box");
 	REQUIRE(box3.color() == red);
+	std::cout << box3;
 }
 
 TEST_CASE("test sphere", "[test sphere]")
@@ -65,6 +66,7 @@ TEST_CASE("test sphere", "[test sphere]")
 	REQUIRE(sphere3.area() == Approx(12.56637));
 	REQUIRE(sphere3.name() == "green sphere");
 	REQUIRE(sphere3.color() == green);	
+	std::cout << sphere3;
 }
 
 int main(int argc, char *argv[])
