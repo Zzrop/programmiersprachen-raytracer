@@ -3,6 +3,7 @@
 #include <glm/vec3.hpp>
 #include "shape.hpp"
 #include <math.h>
+#include "ray.hpp"
 
 class Box : public Shape {
 
@@ -15,6 +16,10 @@ public:
 	float volume() const override;
 	glm::vec3 const& min() const;
 	glm::vec3 const& max() const;
+
+	bool intersect(Ray const& ray) const;
+
+	std::ostream& print(std::ostream& os) const override;	
 
 protected:
 	glm::vec3 min_;

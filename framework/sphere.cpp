@@ -1,4 +1,5 @@
 #include "sphere.hpp"
+#include <glm/gtx/intersect.hpp>
 
 Sphere::Sphere()
   : Shape(), center_{glm::vec3{0.0,0.0,0.0}}, r_{0.5}{}
@@ -9,12 +10,13 @@ Sphere::Sphere(glm::vec3 const& m, float r)
   , r_{r}
  {}
 
-Sphere::Sphere(std::string const& name, Color const& color, glm::vec3 const& m, float r)
-  : Shape(name,color)
+Sphere::Sphere(std::string const& n, Color const& color, glm::vec3 const& m, float r)
+  : Shape(n,color)
   , center_{m}
   , r_{r}
- {}
+ {std::cout << "Sphere-Konstruktor-Aufruf fuer: " << name() << "\n";}
 
+Sphere::~Sphere(){std::cout << "Sphere-Destruktor-Aufruf fuer: " << name() << "\n";}
 
 float Sphere::area() const
 {
@@ -33,3 +35,18 @@ glm::vec3 const& Sphere::mid() const {
 float Sphere::r() const {
 	return r_;
 }
+
+std::ostream& Sphere::print(std::ostream& os) const 
+  {
+    Shape::print(os);    
+    os << "Mittelpunkt: (" << mid().x << "," << mid().y << "," << mid().z << ") \n";
+    os << "Radius: " << r() << "\n";
+    os << "Flaecheninhalt: " << area() << "\n";
+    os << "Volumen: " << volume() << "\n \n";
+    return os;
+  } 
+
+bool Sphere::intersect(Ray const& ray, float& distance) const 
+  {
+    return glm::intersectRaySphere(ray.origin, glm::normalize(ray.direction), center_, r_ * r_, distance);
+  }
