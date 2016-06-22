@@ -10,8 +10,8 @@ Sphere::Sphere(glm::vec3 const& m, float r)
   , r_{r}
  {}
 
-Sphere::Sphere(std::string const& n, Color const& color, glm::vec3 const& m, float r)
-  : Shape(n,color)
+Sphere::Sphere(std::string const& n, Material const& mat, glm::vec3 const& m, float r)
+  : Shape(n,mat)
   , center_{m}
   , r_{r}
  {std::cout << "Sphere-Konstruktor-Aufruf fuer: " << name() << "\n";}

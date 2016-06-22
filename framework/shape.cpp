@@ -2,21 +2,21 @@
 
 Shape::Shape()
 	: name_{"noname"}
-	, color_{Color{0.0,0.0,0.0}}
+	, material_{}
 	{
-		std::cout << "Default-Konstruktor-Aufruf fuer: " << name() << "\n";
+		//std::cout << "Default-Konstruktor-Aufruf fuer: " << name() << "\n";
 	}
 
-Shape::Shape(std::string const& n, Color const& color)
+Shape::Shape(std::string const& n, Material const& mat)
 	: name_{n}
-	, color_{color}
+	, material_{mat}
 	{
-		std::cout << "Konstruktor-Aufruf fuer: " << name() << "\n";
+	//	std::cout << "Konstruktor-Aufruf fuer: " << name() << "\n";
 	}
 
 Shape::~Shape() 
   {
-    std::cout << "Destruktor-Aufruf fuer: " << name() << "\n";
+//    std::cout << "Destruktor-Aufruf fuer: " << name() << "\n";
   }
 
 std::string Shape::name() const
@@ -24,15 +24,15 @@ std::string Shape::name() const
 		return name_;
 	}
 
-Color Shape::color() const
+Material Shape::material() const
 	{
-		return color_;
+		return material_;
 	}	
 
 std::ostream& Shape::print(std::ostream& os) const 
 	{
     	os << "Name: " << name() << "\n"; 	//name_
-    	os << "Color: " << color(); 		//color_
+    	os << "Material: " << material();
     	return os;
 	}
 

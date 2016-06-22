@@ -10,7 +10,7 @@ class Sphere : public Shape{
 public:
 	Sphere();
 	Sphere(glm::vec3 const& m , float r);
-	Sphere(std::string const& name, Color const& color, glm::vec3 const& m , float r);
+	Sphere(std::string const& name, Material const& mat, glm::vec3 const& m , float r);
 	~Sphere();
 
 

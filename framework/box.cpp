@@ -12,8 +12,8 @@ Box::Box(glm::vec3 const& a, glm::vec3 const& b)
   , max_{b}
  {}
 
-Box::Box(std::string const& name, Color const& color, glm::vec3 const& a, glm::vec3 const& b)
-  : Shape(name, color)
+Box::Box(std::string const& name, Material const& material, glm::vec3 const& a, glm::vec3 const& b)
+  : Shape(name, material)
   , min_{a}
   , max_{b}
  {}
