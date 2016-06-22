@@ -5,7 +5,7 @@
 class Shape
 {
 public:
-	/*virtual*/ ~Shape();
+	virtual ~Shape();
 
 	virtual float area() const = 0;
 	virtual float volume() const = 0;

@@ -39,7 +39,7 @@ float Sphere::r() const {
 std::ostream& Sphere::print(std::ostream& os) const 
   {
     Shape::print(os);    
-    os << "Mittelpunkt: (" << mid().x << "," << mid().y << "," << mid().z << ") \n";
+    os << "Mittelpunkt: (" << mid().x << "," << mid().y << "," << mid().z << ") \n"; //glm::to_string(glm::vec3)
     os << "Radius: " << r() << "\n";
     os << "Flaecheninhalt: " << area() << "\n";
     os << "Volumen: " << volume() << "\n \n";

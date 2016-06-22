@@ -31,8 +31,8 @@ Color Shape::color() const
 
 std::ostream& Shape::print(std::ostream& os) const 
 	{
-    	os << "Name: " << name() << "\n";
-    	os << "Color: " << color();
+    	os << "Name: " << name() << "\n"; 	//name_
+    	os << "Color: " << color(); 		//color_
     	return os;
 	}
 
